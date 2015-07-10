@@ -18,7 +18,7 @@ $(function(){
 			sectionTarget = target.data('menu');
 		if( !target.parent().hasClass('selected') ) {
 			//if user has selected a section different from the one alredy visible - load the new content
-			triggerAnimation(sectionTarget);
+			triggerAnimation(sectionTarget, true);
 		}
 
 		firstLoad = true;
@@ -35,22 +35,24 @@ $(function(){
 	      	var newPageArray = location.pathname.split('/'),
 	        //this is the url of the page to be loaded 
 	        newPage = newPageArray[newPageArray.length - 1].replace('.html', '');
-	      	if( !isAnimating ) triggerAnimation(newPage);
+	      	if( !isAnimating ) triggerAnimation(newPage,false);
+	      	document.title = newPage;
+
 	    }
 	    firstLoad = true;
 	});
 
 	//start animation
-	function triggerAnimation(page) {
+	function triggerAnimation(page,bool) {
 		isAnimating =  true;
 		page = ( page == '' ) ? 'index' : page;
 
 		//update dashboard
 		menu.find('*[data-menu="'+page+'"]').parent().addClass('selected').siblings('.selected').removeClass('selected');
-		loadNewContent(page);
+		loadNewContent(page, bool);
 	}
 
-	function loadNewContent(newSection){
+	function loadNewContent(newSection,bool){
 
 			//create a new section element and insert it into the DOM
 			var section = $('<section class="page-section overflow-hidden '+newSection+'"></section>').appendTo(mainContent);
@@ -66,10 +68,12 @@ $(function(){
 					posMenu(newSection);
 
 					var url = newSection+'.html';
-					if(url!=window.location){
+					if(url!=window.location && bool){
 			        //add the new page to the window.history
 			        //if the new page was triggered by a 'popstate' event, don't add it
-				        window.history.pushState({path: url},'test',url);
+				        window.history.pushState('','A',url);
+				        document.title = newSection;
+
 				    }
 					
 					
