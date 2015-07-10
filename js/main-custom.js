@@ -25,7 +25,7 @@ $(function(){
 	});
 
 
-		//detect the 'popstate' event - e.g. user clicking the back button
+	//detect the 'popstate' event - e.g. user clicking the back button
   	$(window).on('popstate', function() {
 	  	if( firstLoad ) {
 		    /*
@@ -69,7 +69,7 @@ $(function(){
 					if(url!=window.location){
 			        //add the new page to the window.history
 			        //if the new page was triggered by a 'popstate' event, don't add it
-				        window.history.pushState({path: url},'',url);
+				        window.history.pushState({path: url},'test',url);
 				    }
 					
 					
