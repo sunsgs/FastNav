@@ -8,7 +8,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-transition: background-color 0.4s;
@@ -104,19 +104,45 @@ nav ul li:after {
 .index-page li:after {
   background-color: #00d8eb;
 }
-.index-page li a:hover {
+.index-page li:hover a {
   color: #00d8eb;
 }
 
-.two-page {
-  background-color: #a3a3a3;
+.about-page {
+  background-color: #9DBCBC;
 }
-.two-page li.selected a {
-  color: #2a2a2a;
+.about-page li.selected a {
+  color: #332717;
 }
-.two-page li:after {
-  background-color: #2a2a2a;
+.about-page li:after {
+  background-color: #332717;
 }
-.two-page li a:hover {
-  color: #2a2a2a;
+.about-page li:hover a {
+  color: #332717;
+}
+
+.gallery-page {
+  background-color: #FFEFA9;
+}
+.gallery-page li.selected a {
+  color: #B9A173;
+}
+.gallery-page li:after {
+  background-color: #B9A173;
+}
+.gallery-page li:hover a {
+  color: #B9A173;
+}
+
+.contacts-page {
+  background-color: #92A68A;
+}
+.contacts-page li.selected a {
+  color: #F5DD9D;
+}
+.contacts-page li:after {
+  background-color: #F5DD9D;
+}
+.contacts-page li:hover a {
+  color: #F5DD9D;
 }
