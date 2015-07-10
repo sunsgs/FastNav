@@ -1,0 +1,133 @@
+@import '../partials/variables'; // colors, fonts etc...
+@mixin transition($transition,$a) {
+    -moz-transition:    $transition $a;
+    -o-transition:      $transition $a;
+    -webkit-transition: $transition $a;
+    transition:         $transition $a;
+}
+@mixin delay($seconds){
+	 -webkit-transition-delay: $seconds; /* Safari */
+    transition-delay: $seconds;;
+}
+@mixin HWa{
+	 /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+
+*, *::after, *::before {
+	box-sizin: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $primary-font; 
+	}
+-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+			@include transition(background-color,.4s);
+	color:#fff;
+}
+
+
+
+nav{
+	font-size:2rem;
+	text-transform:uppercase;
+	&.side-navigation{
+	position: fixed;
+	}
+	&.fixed{
+		text-align: right;
+		right: 0;
+		top:0;
+		@include transition(all,.4s);
+		z-index: 1;
+
+	}
+	& a{
+		color:#fff;
+		@include transition(color,.3s);
+		text-decoration: none;
+		display: block;
+		padding:0.2em;
+
+	}
+	ul li{
+		padding-bottom:3em;
+	}
+	ul li a{
+		display: inline-block;
+	}
+	
+
+	ul li.selected:after{
+		width: 100px!important;
+
+	}
+	ul li:hover:after{
+		width: 100px;
+	}
+	ul li:after{
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 5px;
+		@include transition(width, .3s);
+	}
+
+}
+
+.main{
+	.page-section{
+		/* Force Hardware Acceleration */
+		@include HWa;
+		opacity: 0;
+		@include transition(opacity,.4s);
+
+	}
+	.visible{
+		opacity:1;
+		@include delay(.4s);
+
+	}
+	p{
+		padding:50px;
+		text-align: center;
+	}
+}
+
+.index-page{
+		background-color:#3a3a3a;
+		& li.selected a{
+			color:#00d8eb;
+		}
+		& li:after{
+			background-color:#00d8eb;
+		}
+		& li a:hover{
+			color: #00d8eb;
+	}
+}
+.two-page{
+	background-color:#a3a3a3;
+		& li.selected a{
+			color:#2a2a2a;
+		}
+		& li:after{
+			background-color:#2a2a2a;
+		}
+		& li a:hover{
+			color: #2a2a2a;
+	}
+}

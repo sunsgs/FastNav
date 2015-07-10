@@ -1,0 +1,122 @@
+*, *::after, *::before {
+  box-sizin: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "PT Sans", sans-serif;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  color: #fff;
+}
+
+nav {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+nav.side-navigation {
+  position: fixed;
+}
+nav.fixed {
+  text-align: right;
+  right: 0;
+  top: 0;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: 1;
+}
+nav a {
+  color: #fff;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  text-decoration: none;
+  display: block;
+  padding: 0.2em;
+}
+nav ul li {
+  padding-bottom: 3em;
+}
+nav ul li a {
+  display: inline-block;
+}
+nav ul li.selected:after {
+  width: 100px !important;
+}
+nav ul li:hover:after {
+  width: 100px;
+}
+nav ul li:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 5px;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+
+.main .page-section {
+  /* Force Hardware Acceleration */
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.main .visible {
+  opacity: 1;
+  -webkit-transition-delay: 0.4s;
+  /* Safari */
+  transition-delay: 0.4s;
+}
+.main p {
+  padding: 50px;
+  text-align: center;
+}
+
+.index-page {
+  background-color: #3a3a3a;
+}
+.index-page li.selected a {
+  color: #00d8eb;
+}
+.index-page li:after {
+  background-color: #00d8eb;
+}
+.index-page li a:hover {
+  color: #00d8eb;
+}
+
+.two-page {
+  background-color: #a3a3a3;
+}
+.two-page li.selected a {
+  color: #2a2a2a;
+}
+.two-page li:after {
+  background-color: #2a2a2a;
+}
+.two-page li a:hover {
+  color: #2a2a2a;
+}
