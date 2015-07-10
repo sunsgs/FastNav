@@ -107,6 +107,7 @@ nav{
 }
 
 .index-page{
+		color:#00d8eb;
 		background-color:#3a3a3a;
 		& li.selected a{
 			color:#00d8eb;
@@ -120,6 +121,7 @@ nav{
 }
 .about-page{
 	background-color:#9DBCBC;
+		color:#332717;
 		& li.selected a{
 			color:#332717;
 		}
@@ -132,6 +134,7 @@ nav{
 }
 .gallery-page{
 	background-color:#FFEFA9;
+		color:#B9A173;
 		& li.selected a{
 			color:#B9A173;
 		}
@@ -144,6 +147,7 @@ nav{
 }
 .contacts-page{
 	background-color:#92A68A;
+	color:#F5DD9D;
 		& li.selected a{
 			color:#F5DD9D;
 		}
